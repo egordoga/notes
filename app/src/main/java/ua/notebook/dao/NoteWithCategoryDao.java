@@ -41,8 +41,8 @@ public abstract class NoteWithCategoryDao {
     }
 
     @Query("select name, title, body, date, nid, categoryId from category, note where note.categoryId == category.cid")
-    abstract List<NoteWithCategoryName>     /*LiveData<List<NoteWithCategoryName>>*/ findAllWithCategory();
+    abstract List<NoteWithCategoryName> findAllWithCategory();
 
     @Query("select name, title, body, date from  note inner join category on cid == categoryId where categoryId == :cid")
-    abstract List<NoteWithCategoryName>   /*LiveData<List<NoteWithCategoryName>>*/ findAllWithCategoryById(long cid);
+    abstract List<NoteWithCategoryName> findAllWithCategoryById(long cid);
 }
